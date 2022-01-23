@@ -1,6 +1,7 @@
 ﻿module APIWorker
 open APIModel
 open FSharp.Data
+open FSharp.Data.JsonExtensions
 open System
 
 
@@ -46,7 +47,7 @@ let getLocList cityName =
 
 let getWeather loc cel =
     let tempUnit = if cel then "metric" else "imperial"
-    let link = $"https://api.openweathermap.org/data/2.5/weather?lat={loc.lat}&lon={loc.lon}&appid={openWeatherApiKey}&units={tempUnit}"
+    let link = $"https://api.openweathermap.org/data/2.5/onecall?lat={loc.lat}&lon={loc.lon}&appid={openWeatherApiKey}&units={tempUnit}&exclude=minutely,alerts,daily"
     
     let data = Weather.Load(link)
 
@@ -57,3 +58,13 @@ let getWeather loc cel =
     }
 
    
+
+let writeData (json:bool) (data:APIWeatherModel) (locData:APIMapModel) =
+    
+    match json with
+    | true ->
+        let filename = @"result.json"
+        printfn "The reslut was saved to %s" filename
+    | false -> 
+        let filename = @"result.txt"
+        printfn "The reslut was saved to %s" filename
