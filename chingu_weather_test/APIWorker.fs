@@ -1,7 +1,6 @@
 ﻿module APIWorker
 open APIModel
 open FSharp.Data
-open FSharp.Data.JsonExtensions
 open System
 
 
@@ -52,19 +51,26 @@ let getWeather loc cel =
     let data = Weather.Load(link)
 
     {
-        temp = data.Main.Temp.ToString()
-        cond = data.Weather.[0].Main
-        foresight = data.Weather.[0].Description
+        temp = data.Current.Temp.ToString()
+        cond = data.Current.Weather.[0].Description
+        foresight = data.Hourly.[4].Weather.[0].Description
     }
 
    
 
-let writeData (json:bool) (data:APIWeatherModel) (locData:APIMapModel) =
+let writeData (data:APIWeatherModel) (locData:APIMapModel) tempUnit =
     
-    match json with
+  (*  match json with
     | true ->
-        let filename = @"result.json"
-        printfn "The reslut was saved to %s" filename
-    | false -> 
-        let filename = @"result.txt"
-        printfn "The reslut was saved to %s" filename
+        let file = JsonValue.Load @"Results/result.json"
+        let dataArray = file.GetProperty "savedResults"
+        printfn "%A" dataArray
+        
+        printfn "The reslut was saved to result.json" 
+    | false -> *)
+    let filename = @"result.txt"
+    let file = IO.File.ReadAllLines @"Results/result.txt"
+    let message = [|$"Location: {locData.cityLoc}"; $"Temperature: {data.temp} {tempUnit}"; $"Conditions: {data.cond}"; $"Foresight: {data.foresight}"; "\n"|]
+    IO.File.WriteAllLines (@"Results/result.txt", (Array.append file message))
+    printfn "The result was saved to %s" filename
+

@@ -5,7 +5,6 @@ open CommandLine
 open APIModel
 open APIWorker
 
-
 [<EntryPoint>]
 let main args =
     let parsedValues = Parser.Default.ParseArguments<options> args
@@ -25,10 +24,10 @@ let main args =
                     let weather = getWeather value parsed.Value.celsius
                     let tempChar = if parsed.Value.celsius then "° C" else "°F"
                     printfn "Current Temp in %s is %s %s.\nConditions are currently: %s.\nWhat should you expect: %s" value.cityLoc weather.temp tempChar weather.cond weather.foresight
-                    match parsed.Value.output with
-                    | "json" -> writeData true weather value
-                    | "text" -> writeData false weather value
-                    | _ -> printfn "Not saved"
+                    (*match parsed.Value.output with
+                    | "json" -> writeData true weather value tempChar*)
+                    writeData weather value tempChar
+                    (*| _ -> printfn "Not saved"*)
                 with
                     | :? System.IndexOutOfRangeException -> printfn "Error: Enter a Valid Number"
                     | :? System.FormatException -> printfn "Error: Enter a Valid Number"
@@ -39,10 +38,10 @@ let main args =
                 let weather = getWeather data parsed.Value.celsius
                 let tempChar = if parsed.Value.celsius then "°C" else "°F"
                 printfn "Current Temp in %s is %s %s.\nConditions are currently: %s.\nWhat should you expect: %s" data.cityLoc weather.temp tempChar weather.cond weather.foresight
-                match parsed.Value.output with
-                | "json" -> writeData true weather data
-                | "text" -> writeData false weather data
-                | _ -> printfn "Not saved"
+                (*match parsed.Value.output with
+                | "json" -> writeData true weather data tempChar*)
+                writeData weather data tempChar
+                (*| _ -> printfn "Not saved"*)
                 0
 
     | :? NotParsed<options> as notParsed -> 
