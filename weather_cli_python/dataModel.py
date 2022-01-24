@@ -21,26 +21,28 @@ class WeatherModel:
             with open("config.json", "r") as file:
                 path: str = json.load(file)["save_locations"]["text"]
             with open(path, "a") as file:
-                file.write(f"""
-                Location: {self.city_details}
-                Temperature: {self.temp} {self.temp_unit}
-                Conditions: {self.condition}
-                Future Conditions: {self.future_condition} 
-                """)
+                file.writelines([
+                    f"\nLocation: {self.city_details}",
+                    f"\nTemperature: {self.temp} {self.temp_unit}",
+                    f"\nConditions: {self.condition}",
+                    f"\nFuture Conditions: {self.future_condition}",
+                    "\n"
+                ])
+
             print(f"Saved to {file.name} ({path})")
-    # TODO: implement json
 
     def json_output(self) -> None:
-        json_data = {"location": self.city_details, "temperature": self.temp, "temperatureUnit": self.temp, "condition": self.condition, "futureCondition": self.future_condition}
+        json_data = {"location": self.city_details, "temperature": self.temp, "temperatureUnit": self.temp_unit,
+                     "condition": self.condition, "futureCondition": self.future_condition}
         print(json.dumps(json_data, indent=2))
-        with open("config.json", "r") as file:
+        with open("config.json", "r+") as file:
             path = json.load(file)["save_locations"]["json"]
         with open(path, "r+") as file:
-            data = json.load(path)
+            data = json.load(file)
             data["results"].append(json_data)
             file.seek(0)
             json.dump(data, file, indent=2)
-            print(f"Saved to {file.name} ({path})")
+            print(f"Saved to {file.name}")
 
 
 @dataclasses.dataclass
@@ -50,4 +52,3 @@ class CityModel:
     lon: float
     temp_system: str
     city_desc: str
-

@@ -1,6 +1,6 @@
 {
   "save_locations": {
-    "json": "results/result.json",
-    "text": "results/result.txt"
+    "json": "result.json",
+    "text": "result.txt"
   }
 }

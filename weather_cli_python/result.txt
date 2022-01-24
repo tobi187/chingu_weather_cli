@@ -1,0 +1,6 @@
+Chingu Weather CLI Results: 
+
+Location: Budapest, Hungary
+Temperature: 23.11 F
+Conditions: clear sky
+Future Conditions: clear sky

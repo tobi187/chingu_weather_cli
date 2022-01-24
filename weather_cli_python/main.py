@@ -2,18 +2,6 @@ import sys
 from cli_functionality import special_case, input_validation
 from api_action import get_weather, get_location
 
-help_text = """
-Chingu Weather CLI Python3 Implementation v 1.0.0
-
-  -h, --help:                           print help text
-  cityname (first arg) (required):      provide the City name 
-  -s:                                   choose output + save. Valid options = no_save (default), json, text
-  -c, --celsius:                        set Celsius to temperature Unit
-  -f, --fahrenheit:                     set Fahrenheit to temperature Unit
-  --json-path                           set path to location to save json result (without arg to print path)
-  --text-path                           set path to location to save json result (without arg to print path)
-"""
-
 
 def main(argv: list[str]) -> None:
     special_case(argv)

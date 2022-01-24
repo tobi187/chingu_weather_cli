@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "location": "Berlin, Germany",
+      "temperature": 4.81,
+      "temperatureUnit": "C",
+      "condition": "light intensity drizzle",
+      "futureCondition": "overcast clouds"
+    },
+    {
+      "location": "K\u00f6ln, North Rhine-Westphalia, Germany",
+      "temperature": 3.61,
+      "temperatureUnit": "C",
+      "condition": "overcast clouds",
+      "futureCondition": "scattered clouds"
+    }
+  ]
+}
