@@ -1,0 +1,6 @@
+{
+  "save_locations": {
+    "json": "results/result.json",
+    "text": "results/result.txt"
+  }
+}

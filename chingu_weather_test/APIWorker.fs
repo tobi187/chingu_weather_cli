@@ -14,6 +14,7 @@ type Weather = JsonProvider<"DataExamples/openweather.json">
 
 let geoLoc cityName = 
     let link = $"https://api.mapbox.com/geocoding/v5/mapbox.places/{cityName}.json?access_token={mapboxApiKey}"
+    printfn "%A" link
     let data = Location.Load(link)
     
     if data.Features.Length < 1 then 
@@ -42,7 +43,7 @@ let getLocList cityName =
     printfn "%A" dataList
     dataList
 
-    
+   
 
 let getWeather loc cel =
     let tempUnit = if cel then "metric" else "imperial"
@@ -60,14 +61,6 @@ let getWeather loc cel =
 
 let writeData (data:APIWeatherModel) (locData:APIMapModel) tempUnit =
     
-  (*  match json with
-    | true ->
-        let file = JsonValue.Load @"Results/result.json"
-        let dataArray = file.GetProperty "savedResults"
-        printfn "%A" dataArray
-        
-        printfn "The reslut was saved to result.json" 
-    | false -> *)
     let filename = @"result.txt"
     let file = IO.File.ReadAllLines @"Results/result.txt"
     let message = [|$"Location: {locData.cityLoc}"; $"Temperature: {data.temp} {tempUnit}"; $"Conditions: {data.cond}"; $"Foresight: {data.foresight}"; "\n"|]
