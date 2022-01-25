@@ -13,6 +13,13 @@
       "temperatureUnit": "C",
       "condition": "overcast clouds",
       "futureCondition": "scattered clouds"
+    },
+    {
+      "location": "Stuttgart, Baden-W\u00fcrttemberg, Germany",
+      "temperature": 0.1,
+      "temperatureUnit": "C",
+      "condition": "fog",
+      "futureCondition": "few clouds"
     }
   ]
 }

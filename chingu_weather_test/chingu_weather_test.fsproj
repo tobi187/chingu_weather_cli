@@ -6,9 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Results\result.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Results\result.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

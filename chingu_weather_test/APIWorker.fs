@@ -14,7 +14,6 @@ type Weather = JsonProvider<"DataExamples/openweather.json">
 
 let geoLoc cityName = 
     let link = $"https://api.mapbox.com/geocoding/v5/mapbox.places/{cityName}.json?access_token={mapboxApiKey}"
-    printfn "%A" link
     let data = Location.Load(link)
     
     if data.Features.Length < 1 then 
@@ -40,7 +39,6 @@ let getLocList cityName =
         exit 0
 
     let dataList = Array.map (fun (x: Location.Feature) -> {cityLoc=x.PlaceName; lat=x.Center[1].ToString(); lon=x.Center[0].ToString()}) data.Features
-    printfn "%A" dataList
     dataList
 
    

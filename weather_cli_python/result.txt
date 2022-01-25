@@ -4,3 +4,8 @@ Location: Budapest, Hungary
 Temperature: 23.11 F
 Conditions: clear sky
 Future Conditions: clear sky
+
+Location: Stuttgart, Baden-Württemberg, Germany
+Temperature: 0.1 C
+Conditions: fog
+Future Conditions: few clouds
