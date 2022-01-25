@@ -25,7 +25,9 @@ I've created two versions, one in [Fsharp](#FSharp) and one in [Python](#Python)
 
 ### ExampleImages
 
+![fsharpHelpText](https://user-images.githubusercontent.com/61592216/151048257-b897d160-d62b-47b4-b82f-44b819690f93.png)
 
+![fsharpTextOutput](https://user-images.githubusercontent.com/61592216/151048312-dbed9324-2fb1-4e2b-a86d-9557a3bea5ac.png)
 
 ## Python
 
@@ -44,3 +46,7 @@ I've created two versions, one in [Fsharp](#FSharp) and one in [Python](#Python)
 * [requests](https://pypi.org/project/requests/)
 
 ### ExampleImages
+
+![pyHelpText](https://user-images.githubusercontent.com/61592216/151048382-becbc47f-a8b2-43f4-a700-533102bb9129.png)
+
+![pyOutput](https://user-images.githubusercontent.com/61592216/151049489-7be0af98-c459-4735-9e81-815de036b19c.png)
