@@ -14,10 +14,10 @@ I've created two versions, one in [Fsharp](#FSharp) and one in [Python](#Python)
 * Choose location out of a list of matching possibilities
 
 ### Running the project
-* you probably need dotnet 6
-* in the chingu_weather_test folder run "dotnet build"
+* Dotnet 6 is needed
+* In the chingu_weather_test folder run "dotnet build"
 * Move to dir bin/Debug/.net6/
-* now you can run the programm, ex: .\chingu_weather_test.exe London -c
+* Now you can run the programm, ex: .\chingu_weather_test.exe London -c
 
 ### Dependencies
 * [CommadlineParser.Fsharp](https://github.com/commandlineparser/commandline)
@@ -36,7 +36,7 @@ I've created two versions, one in [Fsharp](#FSharp) and one in [Python](#Python)
 * Change the locations of save files
 
 ### Running the project
-* python3 is needed
+* Python3 is needed
 * (win) py .\main.py London -c -s json
 * (linux/mac) pyhton3 main.py London -c -s json
 
