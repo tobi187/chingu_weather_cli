@@ -31,6 +31,8 @@ I've created two versions, one in [Fsharp](#FSharp) and one in [Python](#Python)
 
 ## Python
 
+I've made a little Demo of the project at: http://sharedshopping.eu.pythonanywhere.com/
+
 ### Features
 * Get the temperature, condition of a specified location
 * Choose between celsius and fahrenheit
